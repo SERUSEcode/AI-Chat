@@ -1,1 +1,20 @@
+start:
+podman compose up --build
 
+stop:
+podman compose down
+
+API Tips:
+
+/* Get answer */
+
+method: POST
+url: http://localhost:11434/api/chat
+body:
+{
+  "model": "smollm2:135m",
+  "messages": [
+    { "role": "user", "content": "Why is Fedora the best Linux distro?" }
+  ],
+  "stream": false
+}
